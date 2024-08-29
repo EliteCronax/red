@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #countdown {
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Please wait to be redirected</h1>
+        <div id="countdown">10</div>
+    </div>
+
+    <script>
+        let count = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        function updateCountdown() {
+            countdownElement.textContent = count;
+            if (count > 0) {
+                count--;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                window.location.href = 'https://github.com/elitecronax';
+            }
+        }
+
+        updateCountdown();
+    </script>
+</body>
+</html>
